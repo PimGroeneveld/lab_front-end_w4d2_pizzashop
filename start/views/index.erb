@@ -1,0 +1,17 @@
+<h1>All pizza orders:</h1>
+
+<!-- the .each is needed here so it loops through all orders -->
+<% @orders.each do |order| %>
+  <p>Name: <%= order.pretty_name()%></p>
+  <p>Order: <%= order.quantity()%> x <%= order.topping %></p>
+  <p> <a href="/pizza-orders/<%= order.id %>">Show Order</a> </p>
+  <hr />
+<% end %>
+
+<form action="/pizza-orders/delete-all" method="post">
+  <input type="submit" value="Delete All Orders">
+</form>
+
+<form action="/pizza-orders/new" method="get">
+  <input type="submit" value="Place new order!">
+</form>

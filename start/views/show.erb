@@ -1,0 +1,14 @@
+<h1>Personal Pizza Order:</h1>
+<!-- no .each needed since its a single item -->
+<p>First Name: <%= @order.first_name%></p>
+<p>Last Name: <%= @order.last_name%></p>
+<p>Topping: <%= @order.topping%></p>
+<p>Quantity: <%= @order.quantity%></p>
+
+<form action="/pizza-orders/<%= @order.id%>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
+
+<form action="/pizza-orders/<%= @order.id%>/edit" method="get">
+  <input type="submit" value="Edit">
+</form>

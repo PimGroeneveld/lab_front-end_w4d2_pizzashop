@@ -1,0 +1,20 @@
+<form action="/pizza-orders/<%= @order.id %>" method="post">
+
+    <label for="first-name"> First Name </label>
+    <input id = "first-name" type="text" name="first_name" value = "<%= @order.first_name%>">
+    <br>
+    <label for="last-name"> Last Name </label>
+    <input id = "last-name" type="text" name="last_name" value = "<%= @order.last_name%>"> <!-- last_name matches to the function in pizza_order.rb-->
+    <br>
+    <label for="pizza-select"> Select Pizza </label>
+    <select id = "pizza-select" name="topping" value = "<%= @order.topping%>">
+      <option value="Margherita">Margherita</option>
+      <option value="Calzone">Calzone</option>
+    </select>
+    <br>
+    <label for="quantity"> Quantity: </label>
+    <input id = "quantity" type="number" name="quantity" required value = "<%= @order.quantity%>">
+  <!-- required in line above makes the field required to fill in -->
+    <input type="submit" value="Update Pizza">
+
+</form>
